@@ -41,6 +41,6 @@ jobs:
       - name: Configure CMake
         env:
           CMAKE_PREFIX_PATH: ${{env.Qt5_Dir}}
-        run: cmake -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G "CodeBlocks - MinGW Makefiles" -B '${{github.workspace}}'/build
+        run: cmake -DCMAKE_BUILD_TYPE=${{env.BUILD_TYPE}} -G Ninja -B '${{github.workspace}}'/build
       - name: Build
         run: cmake --build '${{github.workspace}}'/build --target RePr
